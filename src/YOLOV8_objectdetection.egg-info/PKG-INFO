@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: YOLOV8_objectdetection
+Version: 0.0.0
+Summary: Fine Tuning the YOLO v5 and YOLO v8 algorithm on custom missile dataset with the custom labels for detecting missiles in images and video and deploying it in aws as an end to end project and performing modular coding.
+Home-page: https://github.com/veera776127/YOLO-missile-detection-capstone-project
+Author: veera776127
+Author-email: veeramangalamthulasiram@gmail.com
+Project-URL: Bug Tracker, https://github.com/veera776127/YOLO-missile-detection-capstone-project/issues
+
+# YOLO-missile-detection-capstone-project
+Fine Tuning the YOLO v5 and YOLO v8 algorithm on custom missile dataset with the custom labels for detecting missiles in images and video and deploying it in aws as an end to end project and performing modular coding.

@@ -1,0 +1,40 @@
+# Core Machine Learning Frameworks
+#tensorflow==2.12.0
+numpy
+scipy
+joblib
+
+# Data Processing and Visualization
+pandas
+matplotlib
+seaborn
+
+# Development Tools
+notebook
+tqdm
+gdown
+
+# Object Detection
+ultralytics-yolov8==0.0.1
+
+# AWS S3 Library
+boto3
+
+# ML Operations and Versioning
+mlflow==2.10.2
+dvc
+
+# Configuration and Data Management
+python-box==6.0.2
+pyYAML
+types-PyYAML
+
+# Web Frameworks
+Flask
+Flask-Cors
+
+# Utility
+ensure==1.0.2
+
+# Local package (assuming it refers to the current project)
+-e .

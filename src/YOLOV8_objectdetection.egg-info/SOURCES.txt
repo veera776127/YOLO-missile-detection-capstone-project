@@ -1,0 +1,14 @@
+README.md
+setup.py
+src/YOLOV8_objectdetection.egg-info/PKG-INFO
+src/YOLOV8_objectdetection.egg-info/SOURCES.txt
+src/YOLOV8_objectdetection.egg-info/dependency_links.txt
+src/YOLOV8_objectdetection.egg-info/top_level.txt
+src/YOLOv8_objectdetection/__init__.py
+src/YOLOv8_objectdetection/components/__init__.py
+src/YOLOv8_objectdetection/config/__init__.py
+src/YOLOv8_objectdetection/config/configuration.py
+src/YOLOv8_objectdetection/constants/__init__.py
+src/YOLOv8_objectdetection/entity/__init__.py
+src/YOLOv8_objectdetection/pipeline/__init__.py
+src/YOLOv8_objectdetection/utils/__init__.py
