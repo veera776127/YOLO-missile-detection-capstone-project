@@ -2,3 +2,16 @@
 [2024-02-22 18:43:13,891: INFO: main: custom message]
 [2024-02-22 20:06:16,296: INFO: main: custom message number 2]
 [2024-02-22 20:06:24,311: INFO: main: custom message number 2]
+[2024-02-23 15:40:09,466: INFO: main: Deleting __pycache__ and .pyc files...]
+[2024-02-23 15:40:09,492: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-02-23 15:40:09,494: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-23 15:40:09,494: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-23 15:40:09,495: INFO: common: created directory at: artifacts]
+[2024-02-23 15:40:09,495: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-23 15:40:09,571: INFO: credentials: Found credentials in environment variables.]
+[2024-02-23 15:40:09,724: INFO: data_ingestion: Downloading data from S3 bucket capstone-missile with key missile_data.zip into file artifacts/data_ingestion/missile_data.zip]
+[2024-02-23 15:40:10,776: INFO: data_ingestion: Downloaded data from S3 bucket capstone-missile into file artifacts/data_ingestion/missile_data.zip]
+[2024-02-23 15:40:10,856: INFO: data_ingestion: Extracted data to artifacts/data_ingestion]
+[2024-02-23 15:40:10,856: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]

@@ -31,6 +31,24 @@ conda activate capstone
 ```bash
 pip install -r requirements.txt
 ```
+created a logging code inside the __init__.py of src and then created common.py inside the utils where we use this as common code. Used configbox as exception handler insted of writing custom exception module
 
 
+# Project Workflows
 
+1. Update config.yaml
+2. Update secrets.yaml [Optional]
+3. Update params.yaml
+4. Update the entity
+5. Update the configuration manager in src config
+6. Update the components
+7. Update the pipeline 
+8. Update the main.py
+9. Update the dvc.yaml
+10. app.py
+
+set AWS_ACCESS_KEY_ID=AKIA5FTZFSR62Q3MO3E6
+
+set AWS_SECRET_ACCESS_KEY=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
+
+set AWS_REGION=us-east-1

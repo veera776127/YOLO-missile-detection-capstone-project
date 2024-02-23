@@ -1,0 +1,8 @@
+[2024-02-23 15:20:50,083: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-23 15:20:50,086: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-23 15:20:50,087: INFO: common: created directory at: artifacts]
+[2024-02-23 15:20:50,088: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-23 15:20:50,107: INFO: credentials: Found credentials in shared credentials file: ~/.aws/credentials]
+[2024-02-23 15:20:50,291: INFO: 3113854588: Downloading data from S3 bucket capstone-missile with key missile_data.zip into file artifacts/data_ingestion/missile_data.zip]
+[2024-02-23 15:20:51,303: INFO: 3113854588: Downloaded data from S3 bucket capstone-missile into file artifacts/data_ingestion/missile_data.zip]
+[2024-02-23 15:20:51,364: INFO: 3113854588: Extracted data to artifacts/data_ingestion]
