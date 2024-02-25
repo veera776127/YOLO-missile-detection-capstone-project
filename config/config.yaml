@@ -1,9 +1,13 @@
 artifacts_root: artifacts
 
-
 data_ingestion:
   root_dir: artifacts/data_ingestion
   local_data_file: artifacts/data_ingestion/missile_data.zip
   unzip_dir: artifacts/data_ingestion
   s3_bucket_name: capstone-missile
   s3_object_key: missile_data.zip
+
+Load_model:
+  root_dir: artifacts/model_artifacts
+  pretrained_weights_path: artifacts/pretrained_weights/yolov8n.pt
+  yaml_files_path: artifacts/yaml_data_files

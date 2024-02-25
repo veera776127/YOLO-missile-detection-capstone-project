@@ -7,3 +7,9 @@ class DataIngestionConfig:
     unzip_dir: str
     s3_bucket_name: str
     s3_object_key: str
+
+@dataclass
+class LoadModelConfig:
+    root_dir: str
+    pretrained_weights_path: str
+    yaml_files_path: str

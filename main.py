@@ -2,6 +2,7 @@ import os
 import shutil
 from YOLOv8_objectdetection import logger
 from YOLOv8_objectdetection.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
+from YOLOv8_objectdetection.pipeline.stage_02_prepare_model import ModelPreparationPipeline
 
 def delete_pycache(root_dir='.'):
     """
@@ -15,15 +16,41 @@ def delete_pycache(root_dir='.'):
         for filename in filenames:
             if filename.endswith('.pyc'):
                 os.remove(os.path.join(dirpath, filename))
+    logger.info("Cleanup complete: __pycache__ directories and .pyc files removed.")
 
-STAGE_NAME = "Data Ingestion stage"
-try:
-    logger.info("Deleting __pycache__ and .pyc files...")
-    delete_pycache()  # Call the function to clean up before starting the pipeline
-    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+def formatted_stage_header(stage_name):
+    return f"\n{'=' * 20} Stage: {stage_name} Started {'=' * 20}\n"
+
+def formatted_stage_footer(stage_name):
+    return f"\n{'*' * 20} Stage: {stage_name} Completed {'*' * 20}\n\n{'x' * 50}\n"
+
+def run_data_ingestion_stage():
+    STAGE_NAME = "Data Ingestion Stage"
+    logger.info(formatted_stage_header(STAGE_NAME))
     data_ingestion = DataIngestionTrainingPipeline()
     data_ingestion.main()
-    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
-except Exception as e:
-    logger.exception(e)
-    raise e
+    logger.info(formatted_stage_footer(STAGE_NAME))
+
+def run_model_preparation_stage():
+    STAGE_NAME = "Model Preparation Stage"
+    logger.info(formatted_stage_header(STAGE_NAME))
+    model_preparation = ModelPreparationPipeline()
+    model_preparation.main()
+    logger.info(formatted_stage_footer(STAGE_NAME))
+
+if __name__ == '__main__':
+    try:
+        logger.info("Starting pipeline execution...")
+        logger.info("Deleting __pycache__ and .pyc files...")
+        delete_pycache()
+
+        # Run Data Ingestion Stage
+        run_data_ingestion_stage()
+        
+        # Run Model Preparation Stage
+        run_model_preparation_stage()
+        
+        logger.info("Pipeline execution completed successfully.")
+    except Exception as e:
+        logger.exception("An unexpected error occurred during pipeline execution:")
+        raise e
