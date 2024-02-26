@@ -1,6 +1,12 @@
 # YOLO-missile-detection-capstone-project
 Fine Tuning the YOLO v5 and YOLO v8 algorithm on custom missile dataset with the custom labels for detecting missiles in images and video and deploying it in aws as an end to end project and performing modular coding.
 
+
+![alt text](<study_images/Screenshot 2024-02-25 234830.png>)
+
+![alt text](<study_images/Screenshot 2024-02-25 234900.png>)
+
+
 ## PROJECT WORKFLOWS
 
 1. Update config.yaml
@@ -44,8 +50,28 @@ conda activate capstone
 pip install -r requirements.txt
 ```
 created a logging code inside the __init__.py of src and then created common.py inside the utils where we use this as common code. Used configbox as exception handler insted of writing custom exception module
+#
 
+# Data Ingestion
+Refer below wesite for python sdk boto3 documentation for downloading data from AWS s3 bucket.
+```bash
+https://docs.aws.amazon.com/pythonsdk/
 
+https://docs.aws.amazon.com/amazonglacier/latest/dev/sdk-general-information-section.html  #for any other launguage
+
+```
+# Model training
+Refer this ultralytics documentation for full details on training
+```bash
+https://docs.ultralytics.com/modes/train/
+
+```
+# Model Validation
+Refer this ultralytics documentation for full details on validation
+```bash
+https://docs.ultralytics.com/modes/val/
+
+```
 ### AWS credentials to access the datafile from the amazon s3 bucket 
 set these keys in python environment where your project is been developed so that you can access the s3 bucket without mentioning the credentials in code.
 
