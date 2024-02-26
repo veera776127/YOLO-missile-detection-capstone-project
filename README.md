@@ -50,9 +50,10 @@ created a logging code inside the __init__.py of src and then created common.py 
 set these keys in python environment where your project is been developed so that you can access the s3 bucket without mentioning the credentials in code.
 
 ```bash
-set AWS_ACCESS_KEY_ID=AKIA5FTZFSR62Q3MO3E6
+set AWS_ACCESS_KEY_ID=  (contact owner for AWS_ACCESS_KEY_ID)
 
-set AWS_SECRET_ACCESS_KEY=8VbAWfSXGLUxhoKmhwFWXhlOVnCkpqeyM3qF5SNB
+set AWS_SECRET_ACCESS_KEY= (contact owner for AWS_SECRET_ACCESS_KEY)
 
 set AWS_REGION=us-east-1
 ```
+owner - veeramangalamthulasiram@gmail.com
