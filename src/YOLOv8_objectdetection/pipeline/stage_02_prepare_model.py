@@ -20,6 +20,10 @@ class ModelPreparationPipeline:
         load_model.save_model()
 
         logger.info("Model preparation and saving completed successfully.")
+        logger.info("getting the yaml files")
+        load_model.save_yaml_files()
+
+        logger.info("saving data yaml files completed")
 
 if __name__ == '__main__':
     try:
@@ -30,3 +34,5 @@ if __name__ == '__main__':
     except Exception as e:
         logger.exception(e)
         raise e
+
+

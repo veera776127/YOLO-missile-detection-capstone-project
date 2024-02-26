@@ -3,7 +3,8 @@ import shutil
 from YOLOv8_objectdetection import logger
 from YOLOv8_objectdetection.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 from YOLOv8_objectdetection.pipeline.stage_02_prepare_model import ModelPreparationPipeline
-
+from YOLOv8_objectdetection.pipeline.stage_03_model_training import ModelTrainingPipeline
+from YOLOv8_objectdetection.pipeline.stage_04_model_validation import ModelTrainedValidationPipeline
 def delete_pycache(root_dir='.'):
     """
     Deletes all __pycache__ directories and .pyc files recursively starting from the specified root directory.
@@ -38,6 +39,20 @@ def run_model_preparation_stage():
     model_preparation.main()
     logger.info(formatted_stage_footer(STAGE_NAME))
 
+def run_model_train_stage():
+    STAGE_NAME = "Model Training Stage"
+    logger.info(formatted_stage_header(STAGE_NAME))
+    model_training = ModelTrainingPipeline()
+    model_training.main()
+    logger.info(formatted_stage_footer(STAGE_NAME))
+
+def run_model_validation_stage():
+    STAGE_NAME = "Model Validating Stage"
+    logger.info(formatted_stage_header(STAGE_NAME))
+    model_validating = ModelTrainedValidationPipeline()
+    model_validating.main()
+    logger.info(formatted_stage_footer(STAGE_NAME))
+
 if __name__ == '__main__':
     try:
         logger.info("Starting pipeline execution...")
@@ -49,6 +64,13 @@ if __name__ == '__main__':
         
         # Run Model Preparation Stage
         run_model_preparation_stage()
+
+        # Run  Model Training Stage
+        run_model_train_stage()
+
+        #Run Model Validating Stage
+        run_model_validation_stage()
+
         
         logger.info("Pipeline execution completed successfully.")
     except Exception as e:

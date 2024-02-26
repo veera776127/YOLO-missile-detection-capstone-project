@@ -1,0 +1,11 @@
+# missile_data.yaml
+path: C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/missile_data  # absolute path to dataset root
+train: images/train  # relative to 'path'
+val: images/val      # relative to 'path'
+test:  # test images (optional)
+
+# Classes
+nc: 1
+names:
+  0: Missile
+

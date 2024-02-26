@@ -13,3 +13,17 @@ class LoadModelConfig:
     root_dir: str
     pretrained_weights_path: str
     yaml_files_path: str
+    ultralytics_path: str
+
+
+@dataclass
+class ModelTrainConfig:
+    output_dir: str
+    runs_dir: str
+    training_data_yaml: str
+    epochs: 3
+
+
+@dataclass
+class ModelValidationConfig:
+    weights_path: str

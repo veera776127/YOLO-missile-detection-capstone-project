@@ -1,6 +1,6 @@
 from YOLOv8_objectdetection.constants.constants import CONFIG_FILE_PATH,PARAMS_FILE_PATH
 from YOLOv8_objectdetection.utils.common import read_yaml,create_directories
-from YOLOv8_objectdetection.entity.config_entity import (DataIngestionConfig,LoadModelConfig)
+from YOLOv8_objectdetection.entity.config_entity import (DataIngestionConfig,LoadModelConfig,ModelTrainConfig, ModelValidationConfig)
 class ConfigurationManager:
     def __init__(
         self,
@@ -38,6 +38,27 @@ class ConfigurationManager:
         
         Load_model_config = LoadModelConfig(root_dir=config.root_dir,
                                             pretrained_weights_path=config.pretrained_weights_path,
-                                            yaml_files_path=config.yaml_files_path)
+                                            yaml_files_path=config.yaml_files_path,
+                                            ultralytics_path=config.ultralytics_path
+                                            )
 
         return Load_model_config
+    
+    def get_model_train_config(self) -> ModelTrainConfig:
+        config = self.config.model_training
+
+        model_train_config = ModelTrainConfig(
+            output_dir=config.output_dir,
+            runs_dir=config.runs_dir,
+            training_data_yaml= config.training_data_yaml,
+            epochs=config.epochs
+        )
+
+        return model_train_config
+    
+    def get_model_validation_config(self) -> ModelValidationConfig:
+        config = self.config.model_validation
+
+        model_validation_config = ModelValidationConfig(weights_path=config.weights_path)
+
+        return model_validation_config
