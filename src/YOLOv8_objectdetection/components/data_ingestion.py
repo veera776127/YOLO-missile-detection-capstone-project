@@ -38,11 +38,16 @@ class DataIngestion:
 
     def extract_zip_file(self):
         """
-        Extracts the zip file into the data directory.
+        Extracts the zip file into the project directory.
         """
-        unzip_path = self.config.unzip_dir
-        if not os.path.exists(unzip_path):
-            os.makedirs(unzip_path, exist_ok=True)
+        project_dir = os.getcwd()  # Get the current working directory
+        unzip_dir = self.config.unzip_dir
+        if unzip_dir:  # If unzip_dir is specified, create a subdirectory
+            unzip_path = os.path.join(project_dir, unzip_dir)
+        else:
+            unzip_path = project_dir
+
+        os.makedirs(unzip_path, exist_ok=True)
         with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
             zip_ref.extractall(unzip_path)
             logger.info(f"Extracted data to {unzip_path}")

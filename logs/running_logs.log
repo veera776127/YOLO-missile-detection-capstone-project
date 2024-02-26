@@ -634,3 +634,241 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ]
 [2024-02-25 22:23:23,405: INFO: main: Pipeline execution completed successfully.]
+[2024-02-25 22:39:46,953: INFO: main: Starting pipeline execution...]
+[2024-02-25 22:39:46,954: INFO: main: Deleting __pycache__ and .pyc files...]
+[2024-02-25 22:39:46,978: INFO: main: Cleanup complete: __pycache__ directories and .pyc files removed.]
+[2024-02-25 22:39:46,978: INFO: main: 
+==================== Stage: Data Ingestion Stage Started ====================
+]
+[2024-02-25 22:39:46,981: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-25 22:39:46,981: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-25 22:39:46,982: INFO: common: created directory at: artifacts]
+[2024-02-25 22:39:46,982: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-25 22:39:46,994: INFO: credentials: Found credentials in shared credentials file: ~/.aws/credentials]
+[2024-02-25 22:39:47,174: INFO: data_ingestion: Downloading data from S3 bucket capstone-missile with key missile_data.zip into file artifacts/data_ingestion/missile_data.zip]
+[2024-02-25 22:39:47,948: INFO: data_ingestion: Downloaded data from S3 bucket capstone-missile into file artifacts/data_ingestion/missile_data.zip]
+[2024-02-25 22:39:48,048: INFO: data_ingestion: Extracted data to YOLO-missile-detection-capstone-project/missile_data]
+[2024-02-25 22:39:48,048: INFO: main: 
+******************** Stage: Data Ingestion Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-02-25 22:39:48,049: INFO: main: 
+==================== Stage: Model Preparation Stage Started ====================
+]
+[2024-02-25 22:39:48,050: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-25 22:39:48,051: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-25 22:39:48,051: INFO: common: created directory at: artifacts]
+[2024-02-25 22:39:48,052: INFO: common: created directory at: artifacts]
+[2024-02-25 22:39:48,052: INFO: stage_02_prepare_model: Loading model...]
+[2024-02-25 22:39:50,492: INFO: stage_02_prepare_model: Attempting to save model...]
+[2024-02-25 22:39:50,528: INFO: stage_02_prepare_model: Model preparation and saving completed successfully.]
+[2024-02-25 22:39:50,528: INFO: stage_02_prepare_model: getting the yaml files]
+[2024-02-25 22:39:50,561: INFO: stage_02_prepare_model: saving data yaml files completed]
+[2024-02-25 22:39:50,563: INFO: main: 
+******************** Stage: Model Preparation Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-02-25 22:39:50,563: INFO: main: 
+==================== Stage: Model Training Stage Started ====================
+]
+[2024-02-25 22:39:50,566: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-25 22:39:50,566: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-25 22:39:50,567: INFO: common: created directory at: artifacts]
+[2024-02-25 22:39:50,568: INFO: stage_03_model_training: Training model...]
+[2024-02-25 22:39:50,600: INFO: model_training: Model loaded successfully.]
+[2024-02-25 22:39:50,600: INFO: model_training: Training with missile_data.yaml for 3 epochs...]
+[2024-02-25 22:41:46,654: INFO: main: Starting pipeline execution...]
+[2024-02-25 22:41:46,655: INFO: main: Deleting __pycache__ and .pyc files...]
+[2024-02-25 22:41:46,679: INFO: main: Cleanup complete: __pycache__ directories and .pyc files removed.]
+[2024-02-25 22:41:46,679: INFO: main: 
+==================== Stage: Data Ingestion Stage Started ====================
+]
+[2024-02-25 22:41:46,682: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-25 22:41:46,683: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-25 22:41:46,684: INFO: common: created directory at: artifacts]
+[2024-02-25 22:41:46,684: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-25 22:41:46,697: INFO: credentials: Found credentials in shared credentials file: ~/.aws/credentials]
+[2024-02-25 22:41:46,857: INFO: data_ingestion: Downloading data from S3 bucket capstone-missile with key missile_data.zip into file artifacts/data_ingestion/missile_data.zip]
+[2024-02-25 22:41:48,615: INFO: data_ingestion: Downloaded data from S3 bucket capstone-missile into file artifacts/data_ingestion/missile_data.zip]
+[2024-02-25 22:41:48,710: INFO: data_ingestion: Extracted data to missile_data]
+[2024-02-25 22:41:48,710: INFO: main: 
+******************** Stage: Data Ingestion Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-02-25 22:41:48,711: INFO: main: 
+==================== Stage: Model Preparation Stage Started ====================
+]
+[2024-02-25 22:41:48,713: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-25 22:41:48,713: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-25 22:41:48,714: INFO: common: created directory at: artifacts]
+[2024-02-25 22:41:48,714: INFO: common: created directory at: artifacts]
+[2024-02-25 22:41:48,715: INFO: stage_02_prepare_model: Loading model...]
+[2024-02-25 22:41:48,751: INFO: stage_02_prepare_model: Attempting to save model...]
+[2024-02-25 22:41:48,786: INFO: stage_02_prepare_model: Model preparation and saving completed successfully.]
+[2024-02-25 22:41:48,786: INFO: stage_02_prepare_model: getting the yaml files]
+[2024-02-25 22:41:48,820: INFO: stage_02_prepare_model: saving data yaml files completed]
+[2024-02-25 22:41:48,822: INFO: main: 
+******************** Stage: Model Preparation Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-02-25 22:41:48,823: INFO: main: 
+==================== Stage: Model Training Stage Started ====================
+]
+[2024-02-25 22:41:48,825: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-25 22:41:48,826: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-25 22:41:48,826: INFO: common: created directory at: artifacts]
+[2024-02-25 22:41:48,827: INFO: stage_03_model_training: Training model...]
+[2024-02-25 22:41:48,858: INFO: model_training: Model loaded successfully.]
+[2024-02-25 22:41:48,859: INFO: model_training: Training with missile_data.yaml for 3 epochs...]
+[2024-02-25 22:43:53,894: INFO: main: Starting pipeline execution...]
+[2024-02-25 22:43:53,894: INFO: main: Deleting __pycache__ and .pyc files...]
+[2024-02-25 22:43:53,918: INFO: main: Cleanup complete: __pycache__ directories and .pyc files removed.]
+[2024-02-25 22:43:53,918: INFO: main: 
+==================== Stage: Data Ingestion Stage Started ====================
+]
+[2024-02-25 22:43:53,928: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-25 22:43:53,929: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-25 22:43:53,929: INFO: common: created directory at: artifacts]
+[2024-02-25 22:43:53,929: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-25 22:43:53,941: INFO: credentials: Found credentials in shared credentials file: ~/.aws/credentials]
+[2024-02-25 22:43:54,105: INFO: data_ingestion: Downloading data from S3 bucket capstone-missile with key missile_data.zip into file artifacts/data_ingestion/missile_data.zip]
+[2024-02-25 22:43:55,296: INFO: data_ingestion: Downloaded data from S3 bucket capstone-missile into file artifacts/data_ingestion/missile_data.zip]
+[2024-02-25 22:43:55,298: ERROR: main: An unexpected error occurred during pipeline execution:]
+Traceback (most recent call last):
+  File "C:\Users\vishw\Documents\cap_project_tulasi\YOLO-missile-detection-capstone-project\main.py", line 63, in <module>
+    run_data_ingestion_stage()
+  File "C:\Users\vishw\Documents\cap_project_tulasi\YOLO-missile-detection-capstone-project\main.py", line 32, in run_data_ingestion_stage
+    data_ingestion.main()
+  File "c:\users\vishw\documents\cap_project_tulasi\yolo-missile-detection-capstone-project\src\YOLOv8_objectdetection\pipeline\stage_01_data_ingestion.py", line 18, in main
+    data_ingestion.extract_zip_file()
+  File "c:\users\vishw\documents\cap_project_tulasi\yolo-missile-detection-capstone-project\src\YOLOv8_objectdetection\components\data_ingestion.py", line 45, in extract_zip_file
+    os.makedirs(unzip_path, exist_ok=True)
+  File "<frozen os>", line 225, in makedirs
+FileNotFoundError: [WinError 3] The system cannot find the path specified: ''
+[2024-02-25 22:46:20,961: INFO: main: Starting pipeline execution...]
+[2024-02-25 22:46:20,961: INFO: main: Deleting __pycache__ and .pyc files...]
+[2024-02-25 22:46:20,985: INFO: main: Cleanup complete: __pycache__ directories and .pyc files removed.]
+[2024-02-25 22:46:20,986: INFO: main: 
+==================== Stage: Data Ingestion Stage Started ====================
+]
+[2024-02-25 22:46:20,988: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-25 22:46:20,988: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-25 22:46:20,989: INFO: common: created directory at: artifacts]
+[2024-02-25 22:46:20,989: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-25 22:46:21,004: INFO: credentials: Found credentials in shared credentials file: ~/.aws/credentials]
+[2024-02-25 22:46:21,187: INFO: data_ingestion: Downloading data from S3 bucket capstone-missile with key missile_data.zip into file artifacts/data_ingestion/missile_data.zip]
+[2024-02-25 22:46:22,625: INFO: data_ingestion: Downloaded data from S3 bucket capstone-missile into file artifacts/data_ingestion/missile_data.zip]
+[2024-02-25 22:46:22,731: INFO: data_ingestion: Extracted data to artifacts/data_ingestion]
+[2024-02-25 22:46:22,732: INFO: main: 
+******************** Stage: Data Ingestion Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-02-25 22:46:22,732: INFO: main: 
+==================== Stage: Model Preparation Stage Started ====================
+]
+[2024-02-25 22:46:22,734: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-25 22:46:22,734: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-25 22:46:22,735: INFO: common: created directory at: artifacts]
+[2024-02-25 22:46:22,735: INFO: common: created directory at: artifacts]
+[2024-02-25 22:46:22,736: INFO: stage_02_prepare_model: Loading model...]
+[2024-02-25 22:46:22,792: INFO: stage_02_prepare_model: Attempting to save model...]
+[2024-02-25 22:46:22,838: INFO: stage_02_prepare_model: Model preparation and saving completed successfully.]
+[2024-02-25 22:46:22,839: INFO: stage_02_prepare_model: getting the yaml files]
+[2024-02-25 22:46:22,872: INFO: stage_02_prepare_model: saving data yaml files completed]
+[2024-02-25 22:46:22,875: INFO: main: 
+******************** Stage: Model Preparation Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-02-25 22:46:22,875: INFO: main: 
+==================== Stage: Model Training Stage Started ====================
+]
+[2024-02-25 22:46:22,877: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-25 22:46:22,879: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-25 22:46:22,879: INFO: common: created directory at: artifacts]
+[2024-02-25 22:46:22,880: INFO: stage_03_model_training: Training model...]
+[2024-02-25 22:46:22,915: INFO: model_training: Model loaded successfully.]
+[2024-02-25 22:46:22,916: INFO: model_training: Training with missile_data.yaml for 3 epochs...]
+[2024-02-25 22:49:51,567: INFO: main: Starting pipeline execution...]
+[2024-02-25 22:49:51,567: INFO: main: Deleting __pycache__ and .pyc files...]
+[2024-02-25 22:49:51,591: INFO: main: Cleanup complete: __pycache__ directories and .pyc files removed.]
+[2024-02-25 22:49:51,591: INFO: main: 
+==================== Stage: Data Ingestion Stage Started ====================
+]
+[2024-02-25 22:49:51,593: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-25 22:49:51,594: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-25 22:49:51,594: INFO: common: created directory at: artifacts]
+[2024-02-25 22:49:51,594: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-25 22:49:51,609: INFO: credentials: Found credentials in shared credentials file: ~/.aws/credentials]
+[2024-02-25 22:49:51,782: INFO: data_ingestion: Downloading data from S3 bucket capstone-missile with key missile_data.zip into file artifacts/data_ingestion/missile_data.zip]
+[2024-02-25 22:49:52,643: INFO: data_ingestion: Downloaded data from S3 bucket capstone-missile into file artifacts/data_ingestion/missile_data.zip]
+[2024-02-25 22:49:52,730: INFO: data_ingestion: Extracted data to C:\Users\vishw\Documents\cap_project_tulasi\YOLO-missile-detection-capstone-project]
+[2024-02-25 22:49:52,731: INFO: main: 
+******************** Stage: Data Ingestion Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-02-25 22:49:52,731: INFO: main: 
+==================== Stage: Model Preparation Stage Started ====================
+]
+[2024-02-25 22:49:52,733: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-25 22:49:52,734: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-25 22:49:52,735: INFO: common: created directory at: artifacts]
+[2024-02-25 22:49:52,735: INFO: common: created directory at: artifacts]
+[2024-02-25 22:49:52,736: INFO: stage_02_prepare_model: Loading model...]
+[2024-02-25 22:49:52,799: INFO: stage_02_prepare_model: Attempting to save model...]
+[2024-02-25 22:49:52,800: INFO: stage_02_prepare_model: Model preparation and saving completed successfully.]
+[2024-02-25 22:49:52,800: INFO: stage_02_prepare_model: getting the yaml files]
+[2024-02-25 22:49:52,830: INFO: stage_02_prepare_model: saving data yaml files completed]
+[2024-02-25 22:49:52,832: INFO: main: 
+******************** Stage: Model Preparation Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-02-25 22:49:52,832: INFO: main: 
+==================== Stage: Model Training Stage Started ====================
+]
+[2024-02-25 22:49:52,834: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-25 22:49:52,835: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-25 22:49:52,835: INFO: common: created directory at: artifacts]
+[2024-02-25 22:49:52,836: INFO: stage_03_model_training: Training model...]
+[2024-02-25 22:49:52,880: INFO: model_training: Model loaded successfully.]
+[2024-02-25 22:49:52,881: INFO: model_training: Training with missile_data.yaml for 3 epochs...]
+[2024-02-25 22:51:03,933: INFO: model_training: Model training completed.]
+[2024-02-25 22:51:03,935: INFO: model_training: Output directory verified: C:\Users\vishw\Documents\cap_project_tulasi\YOLO-missile-detection-capstone-project\missile_trained_weights]
+[2024-02-25 22:51:03,936: INFO: model_training: Looking in directory: C:\Users\vishw\Documents\cap_project_tulasi\YOLO-missile-detection-capstone-project\runs\detect]
+[2024-02-25 22:51:03,937: INFO: model_training: Found detect training runs: [WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train'), WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train2'), WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train3'), WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train4'), WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train5'), WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train6'), WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train7'), WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train8'), WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train9')]]
+[2024-02-25 22:51:03,937: INFO: model_training: Most recent training run: C:\Users\vishw\Documents\cap_project_tulasi\YOLO-missile-detection-capstone-project\runs\detect\train9\weights]
+[2024-02-25 22:51:03,940: INFO: model_training: Best model weights saved to C:\Users\vishw\Documents\cap_project_tulasi\YOLO-missile-detection-capstone-project\missile_trained_weights\best.pt]
+[2024-02-25 22:51:03,946: INFO: stage_03_model_training: Model training completed successfully.]
+[2024-02-25 22:51:03,946: INFO: main: 
+******************** Stage: Model Training Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-02-25 22:51:03,946: INFO: main: 
+==================== Stage: Model Validating Stage Started ====================
+]
+[2024-02-25 22:51:03,950: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-25 22:51:03,951: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-25 22:51:03,952: INFO: common: created directory at: artifacts]
+[2024-02-25 22:51:03,952: INFO: stage_04_model_validation: Validating the model...]
+[2024-02-25 22:51:03,952: INFO: model_validation: Loading the trained model from missile_trained_weights/best.pt...]
+[2024-02-25 22:51:04,011: INFO: model_validation: Validating the model...]
+[2024-02-25 22:51:08,420: INFO: model_validation: Validation completed.]
+[2024-02-25 22:51:08,421: INFO: model_validation: Metrics Information:]
+[2024-02-25 22:51:08,421: INFO: model_validation: mAP@50: 0.3490850672219166]
+[2024-02-25 22:51:08,421: INFO: model_validation: mAP@75: 0.006292865156242462]
+[2024-02-25 22:51:08,422: INFO: model_validation: mAPs: [    0.10473]]
+[2024-02-25 22:51:08,422: INFO: stage_04_model_validation: Model training completed successfully.]
+[2024-02-25 22:51:08,422: INFO: main: 
+******************** Stage: Model Validating Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-02-25 22:51:08,422: INFO: main: Pipeline execution completed successfully.]
