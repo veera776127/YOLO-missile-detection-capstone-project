@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 artifacts/*
 runs/*
+missile_data/*
+artifacts/data_injestion/*
