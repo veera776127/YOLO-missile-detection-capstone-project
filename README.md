@@ -50,26 +50,25 @@ conda activate capstone
 pip install -r requirements.txt
 ```
 created a logging code inside the __init__.py of src and then created common.py inside the utils where we use this as common code. Used configbox as exception handler insted of writing custom exception module
-#
 
 # Data Ingestion
 Refer below wesite for python sdk boto3 documentation for downloading data from AWS s3 bucket.
 ```bash
 https://docs.aws.amazon.com/pythonsdk/
-
+```
+```bash
 https://docs.aws.amazon.com/amazonglacier/latest/dev/sdk-general-information-section.html  #for any other launguage
-
 ```
 # Model training
 Refer this ultralytics documentation for full details on training
 ```bash
 https://docs.ultralytics.com/modes/train/
-
 ```
 # Model Validation
 Refer this ultralytics documentation for full details on validation
 ```bash
 https://docs.ultralytics.com/modes/val/
+```
 
 # Model Prediction
 Refer this ultralytics documentation for full details on validation
@@ -90,8 +89,6 @@ set AWS_SECRET_ACCESS_KEY= (contact owner for AWS_SECRET_ACCESS_KEY)
 set AWS_REGION=us-east-1
 ```
 owner - veeramangalamthulasiram@gmail.com
-
-
 
 ```bash
 export MLFLOW_TRACKING_URI=https://dagshub.com/veera776127/YOLO-missile-detection-capstone-project.mlflow
