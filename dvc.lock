@@ -1,0 +1,92 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/YOLOv8_objectdetection/pipeline/stage_01_data_ingestion.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: f64fd3856753e05a130e9ee54f694803
+      size: 754
+    - path: src/YOLOv8_objectdetection/pipeline/stage_01_data_ingestion.py
+      hash: md5
+      md5: 82c132085087ad669a69e69236c9eb90
+      size: 941
+    outs:
+    - path: artifacts/data_ingestion/missile_data.zip
+      hash: md5
+      md5: 214f91a71e6cb504f96018352de4815b
+      size: 438345
+    - path: missile_data
+      hash: md5
+      md5: 2b00b5d098830abb53d3de3945afdc78.dir
+      size: 437043
+      nfiles: 109
+  prepare_base_model:
+    cmd: python src/YOLOv8_objectdetection/pipeline/stage_02_prepare_model.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: f64fd3856753e05a130e9ee54f694803
+      size: 754
+    - path: src/YOLOv8_objectdetection/pipeline/stage_02_prepare_model.py
+      hash: md5
+      md5: 3cd0cc7531d403fe82293cbfe541624f
+      size: 1199
+    outs:
+    - path: artifacts/yaml_data_files
+      hash: md5
+      md5: e7b2a5c0e085c341b379a49600568c40.dir
+      size: 104037
+      nfiles: 24
+    - path: pretrained_weights/yolov8n.pt
+      hash: md5
+      md5: 0305608151dd1725c9d7da6882ae52d5
+      size: 6534387
+  training:
+    cmd: python src/YOLOv8_objectdetection/pipeline/stage_03_model_training.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: f64fd3856753e05a130e9ee54f694803
+      size: 754
+    - path: missile_data
+      hash: md5
+      md5: 00f66a4679905818d745071c83cc7d55.dir
+      size: 441463
+      nfiles: 109
+    - path: pretrained_weights/yolov8n.pt
+      hash: md5
+      md5: 0305608151dd1725c9d7da6882ae52d5
+      size: 6534387
+    - path: src/YOLOv8_objectdetection/pipeline/stage_03_model_training.py
+      hash: md5
+      md5: 45dfbcd3898a153b33b5cdcdbcc7fb17
+      size: 1013
+    outs:
+    - path: missile_trained_weights/best.pt
+      hash: md5
+      md5: 3c482c73fb101a194f9f2fa83c72e4cf
+      size: 6238041
+  evaluation:
+    cmd: python src/YOLOv8_objectdetection/pipeline/stage_04_model_validation.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: f64fd3856753e05a130e9ee54f694803
+      size: 754
+    - path: missile_data
+      hash: md5
+      md5: 00f66a4679905818d745071c83cc7d55.dir
+      size: 441463
+      nfiles: 109
+    - path: missile_trained_weights/best.pt
+      hash: md5
+      md5: 3c482c73fb101a194f9f2fa83c72e4cf
+      size: 6238041
+    - path: src/YOLOv8_objectdetection/pipeline/stage_04_model_validation.py
+      hash: md5
+      md5: 13add3808e125b1fe6a96bb549ce1e6f
+      size: 1037
+    params:
+      params.yaml:
+        prediction_params.confidence_threshold: 0.01211

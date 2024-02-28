@@ -1,0 +1,41 @@
+stages:
+  data_ingestion:
+    cmd: python src/YOLOv8_objectdetection/pipeline/stage_01_data_ingestion.py
+    deps:
+      - src/YOLOv8_objectdetection/pipeline/stage_01_data_ingestion.py
+      - config/config.yaml
+    outs:
+      - artifacts/data_ingestion/missile_data.zip
+      - missile_data
+
+
+  prepare_base_model:
+    cmd: python src/YOLOv8_objectdetection/pipeline/stage_02_prepare_model.py
+    deps:
+      - src/YOLOv8_objectdetection/pipeline/stage_02_prepare_model.py
+      - config/config.yaml
+    outs:
+      - pretrained_weights/yolov8n.pt
+      - artifacts/yaml_data_files
+
+
+  training:
+    cmd: python src/YOLOv8_objectdetection/pipeline/stage_03_model_training.py
+    deps:
+      - src/YOLOv8_objectdetection/pipeline/stage_03_model_training.py
+      - config/config.yaml
+      - missile_data
+      - pretrained_weights/yolov8n.pt
+    outs:
+      - missile_trained_weights/best.pt
+
+
+  evaluation:
+    cmd: python src/YOLOv8_objectdetection/pipeline/stage_04_model_validation.py
+    deps:
+      - src/YOLOv8_objectdetection/pipeline/stage_04_model_validation.py
+      - config/config.yaml
+      - missile_data
+      - missile_trained_weights/best.pt
+    params:
+      - prediction_params.confidence_threshold

@@ -165,3 +165,4 @@ artifacts/data_injestion/*
 
 /pretrained_weights/yolov8n.pt
 
+/missile_data

@@ -83,3 +83,21 @@ set AWS_SECRET_ACCESS_KEY= (contact owner for AWS_SECRET_ACCESS_KEY)
 set AWS_REGION=us-east-1
 ```
 owner - veeramangalamthulasiram@gmail.com
+
+
+
+```bash
+export MLFLOW_TRACKING_URI=https://dagshub.com/veera776127/YOLO-missile-detection-capstone-project.mlflow
+export MLFLOW_TRACKING_USERNAME=veera776127
+export MLFLOW_TRACKING_PASSWORD=f6689c372e9af944a3221fd7b866b7a1dd9d6474
+```
+python script.py
+
+
+os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/veera776127/YOLO-missile-detection-capstone-project.mlflow"
+os.environ["MLFLOW_TRACKING_USERNAME"]="veera776127"
+os.environ["MLFLOW_TRACKING_PASSWORD"]="f6689c372e9af944a3221fd7b866b7a1dd9d6474"
+
+
+set MLFLOW_TRACKING_USERNAME=veera776127
+set MLFLOW_TRACKING_PASSWORD=f6689c372e9af944a3221fd7b866b7a1dd9d6474
