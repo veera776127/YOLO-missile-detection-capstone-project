@@ -76,9 +76,7 @@ Refer this ultralytics documentation for full details on validation
 ```bash
 https://docs.ultralytics.com/modes/predict/#probs
 ```
-
-```
-### AWS credentials to access the datafile from the amazon s3 bucket 
+## AWS credentials to access the datafile from the amazon s3 bucket 
 set these keys in python environment where your project is been developed so that you can access the s3 bucket without mentioning the credentials in code.
 
 ```bash
@@ -90,18 +88,25 @@ set AWS_REGION=us-east-1
 ```
 owner - veeramangalamthulasiram@gmail.com
 
+# AWS Aand MLFLOW credentials to access the datafile from the amazon s3 bucket 
+set these keys in python environment where your project is been developed so that you can access the MLFLOW and track experiment.
+![image](https://github.com/veera776127/YOLO-missile-detection-capstone-project/assets/70521505/32cfdf25-9f7d-47ea-9456-22bbee6abf54)
+
+### Linux or gitbash prompt
 ```bash
-export MLFLOW_TRACKING_URI=https://dagshub.com/veera776127/YOLO-missile-detection-capstone-project.mlflow
+export MLFLOW_TRACKING_URI=(contact owner for MLFLOW_TRACKING_URI)
 export MLFLOW_TRACKING_USERNAME=veera776127
-export MLFLOW_TRACKING_PASSWORD=f6689c372e9af944a3221fd7b866b7a1dd9d6474
+export MLFLOW_TRACKING_PASSWORD= (contact owner for MLFLOW_TRACKING_PASSWORD)
 ```
-python script.py
-
-
-os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/veera776127/YOLO-missile-detection-capstone-project.mlflow"
-os.environ["MLFLOW_TRACKING_USERNAME"]="veera776127"
-os.environ["MLFLOW_TRACKING_PASSWORD"]="f6689c372e9af944a3221fd7b866b7a1dd9d6474"
-
-
+### Windows cmd prompt/shell
+```bash
+set MLFLOW_TRACKING_URI=(contact owner for MLFLOW_TRACKING_URI)
 set MLFLOW_TRACKING_USERNAME=veera776127
-set MLFLOW_TRACKING_PASSWORD=f6689c372e9af944a3221fd7b866b7a1dd9d6474
+set MLFLOW_TRACKING_PASSWORD=(contact owner for MLFLOW_TRACKING_PASSWORD)
+```
+### In jupyter notebook
+```bash
+os.environ["MLFLOW_TRACKING_URI"]=(contact owner for MLFLOW_TRACKING_URI)
+os.environ["MLFLOW_TRACKING_USERNAME"]="veera776127"
+os.environ["MLFLOW_TRACKING_PASSWORD"]=(contact owner for MLFLOW_TRACKING_PASSWORD)
+
