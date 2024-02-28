@@ -162,3 +162,6 @@ artifacts/*
 runs/*
 missile_data/*
 artifacts/data_injestion/*
+
+/pretrained_weights/yolov8n.pt
+
