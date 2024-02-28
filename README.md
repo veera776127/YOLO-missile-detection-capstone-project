@@ -34,8 +34,8 @@ https://github.com/veera776127/YOLO-missile-detection-capstone-project.git
 3. In requirements.txt define all the required libraries to be installed in the environment <br>
 4. In setup.py give all details of the project <br>
 
-### STEP 01- Create a conda environment after opening the repository can give specific version of python or just give python so it will take latest version for downloading
-
+### STEP 01- Create a conda environment 
+After opening the repository can give specific version of python or just give python so it will take latest version for downloading
 ```bash
 conda create -n capstone python -y
 ```
@@ -70,6 +70,13 @@ https://docs.ultralytics.com/modes/train/
 Refer this ultralytics documentation for full details on validation
 ```bash
 https://docs.ultralytics.com/modes/val/
+
+# Model Prediction
+Refer this ultralytics documentation for full details on validation
+
+```bash
+https://docs.ultralytics.com/modes/predict/#probs
+```
 
 ```
 ### AWS credentials to access the datafile from the amazon s3 bucket 
