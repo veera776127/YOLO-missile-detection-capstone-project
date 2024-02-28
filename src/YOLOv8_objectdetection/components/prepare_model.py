@@ -12,22 +12,10 @@ class PrepareModel:
 
     def get_model(self):
         # Load the model, assuming 'yolov8n.pt' is the correct model file
-        self.model = YOLO('yolov8n.pt')
+        self.model = YOLO('pretrained_weights/yolov8n.pt')
         print("Model loaded successfully.")
 
-    def save_model(self):
-        model_path = self.config.pretrained_weights_path
-        # Ensure the directory for pretrained_weights_path exists
-        os.makedirs(os.path.dirname(model_path), exist_ok=True)
-        
-        # Check if the model file already exists
-        if os.path.exists(model_path):
-            print(f"Model file already exists at {model_path}. No need to save again.")
-        else:
-            # Save the model since it doesn't exist
-            torch.save(self.model.state_dict(), model_path)
-            print(f"Model saved successfully at: {model_path}")
-    
+   
     def save_yaml_files(self):
         yaml_data_path = self.config.yaml_files_path
         os.makedirs(yaml_data_path, exist_ok=True)  # Ensure the directory exists

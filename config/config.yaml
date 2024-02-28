@@ -9,7 +9,6 @@ data_ingestion:
 
 Load_model:
   root_dir: artifacts
-  pretrained_weights_path: artifacts/pretrained_weights/yolov8n.pt
   yaml_files_path: artifacts/yaml_data_files
   ultralytics_path: c:/Users/vishw/anaconda3/envs/capstone/Lib/site-packages/ultralytics
 
@@ -18,9 +17,12 @@ model_training:
   output_dir: missile_trained_weights
   runs_dir: runs/detect
   training_data_yaml: missile_data.yaml
-  epochs: 3
+  epochs: 5
 
 model_validation:
   weights_path: missile_trained_weights/best.pt
 
-
+model_prediction:
+  trained_weights_path: missile_trained_weights/best.pt
+  test_images_path: test
+  results_path: test/test_results

@@ -16,9 +16,6 @@ class ModelPreparationPipeline:
         logger.info("Loading model...")
         load_model.get_model()
 
-        logger.info("Attempting to save model...")
-        load_model.save_model()
-
         logger.info("Model preparation and saving completed successfully.")
         logger.info("getting the yaml files")
         load_model.save_yaml_files()

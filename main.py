@@ -5,6 +5,7 @@ from YOLOv8_objectdetection.pipeline.stage_01_data_ingestion import DataIngestio
 from YOLOv8_objectdetection.pipeline.stage_02_prepare_model import ModelPreparationPipeline
 from YOLOv8_objectdetection.pipeline.stage_03_model_training import ModelTrainingPipeline
 from YOLOv8_objectdetection.pipeline.stage_04_model_validation import ModelTrainedValidationPipeline
+from YOLOv8_objectdetection.pipeline.stage_05_model_prediction import ModelPredictionPipeline
 def delete_pycache(root_dir='.'):
     """
     Deletes all __pycache__ directories and .pyc files recursively starting from the specified root directory.
@@ -53,6 +54,13 @@ def run_model_validation_stage():
     model_validating.main()
     logger.info(formatted_stage_footer(STAGE_NAME))
 
+def run_model_testing_stage():
+    STAGE_NAME = "Model testing Stage"
+    logger.info(formatted_stage_header(STAGE_NAME))
+    model_predicting = ModelPredictionPipeline()
+    model_predicting.main()
+    logger.info(formatted_stage_footer(STAGE_NAME))
+
 if __name__ == '__main__':
     try:
         logger.info("Starting pipeline execution...")
@@ -71,7 +79,9 @@ if __name__ == '__main__':
         #Run Model Validating Stage
         run_model_validation_stage()
 
-        
+        #Run Model Validating Stage
+        run_model_testing_stage()
+
         logger.info("Pipeline execution completed successfully.")
     except Exception as e:
         logger.exception("An unexpected error occurred during pipeline execution:")
