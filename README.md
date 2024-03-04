@@ -76,6 +76,35 @@ Refer this ultralytics documentation for full details on validation
 ```bash
 https://docs.ultralytics.com/modes/predict/#probs
 ```
+# Docker script for dockerization
+```bash
+# Use the latest official Python runtime as a parent image
+FROM python:3.10
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install libGL for OpenCV
+RUN apt-get update && apt-get install -y libgl1-mesa-glx
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+RUN pip install --no-cache-dir --upgrade ultralytics
+
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
+
+# Define environment variable
+ENV NAME World
+
+# Run app.py when the container launches
+CMD ["python", "app1.py"]
+```
+
 ## AWS credentials to access the datafile from the amazon s3 bucket 
 set these keys in python environment where your project is been developed so that you can access the s3 bucket without mentioning the credentials in code.
 
