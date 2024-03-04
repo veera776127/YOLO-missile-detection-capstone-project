@@ -1,7 +1,7 @@
 from YOLOv8_objectdetection.constants.constants import CONFIG_FILE_PATH,PARAMS_FILE_PATH
 from YOLOv8_objectdetection.utils.common import read_yaml,create_directories
 from YOLOv8_objectdetection import logger
-from YOLOv8_objectdetection.entity.config_entity import (DataIngestionConfig,LoadModelConfig,ModelTrainConfig, ModelValidationConfig,ModelPredictionConfig)
+from YOLOv8_objectdetection.entity.config_entity import (DataIngestionConfig,LoadModelConfig,ModelTrainConfig, ModelValidationConfig)
 class ConfigurationManager:
     def __init__(
         self,
@@ -63,17 +63,3 @@ class ConfigurationManager:
 
         return model_validation_config
     
-
-    def get_model_prediction_config(self):
-        # Assuming your params.yaml structure and keys, with added handling for missing keys
-        confidence_threshold = self.params.get('prediction_params', {}).get('confidence_threshold', 0.25)  # Provide default value
-        
-        # Assuming 'model_prediction' is correctly loaded from your config
-        config = self.config['model_prediction']
-
-        return ModelPredictionConfig(
-            trained_weights_path=config.get('trained_weights_path'),
-            test_images_path=config.get('test_images_path'),
-            results_path=config.get('results_path'),
-            confidence_threshold=confidence_threshold,
-        )

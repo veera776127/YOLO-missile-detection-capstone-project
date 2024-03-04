@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Missile Detection using YOLOv8 Algorithm</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="{{ url_for('static', filename='images/missile-detection-logo.png') }}" alt="Missile Detection Logo" class="website-logo" />
+
+            <div class="header-title">MISSILE DETECTION USING YOLOv8</div>
+            <div class="header-subtitle">Upload and detect with ease</div>
+            
+        </div>
+    </header>
+    <div class="container">
+        <div class="wrapper">
+            <h1>Upload Image</h1>
+            <form action="/" method="post" enctype="multipart/form-data">
+                <div class="upload-container">
+                    <img id="displayImage" src="" alt="Uploaded image will be displayed here" style="display:none;"/>
+                    <label for="imageUpload" class="upload-label">+</label>
+                    <input type="file" id="imageUpload" name="file" accept="image/*" style="display:none;" onchange="loadFile(event)">
+                </div>
+                <button type="submit" class="upload-btn" id="uploadButton" style="display:none;">Upload</button>
+            </form>
+        </div>
+
+        <div class="wrapper" style="float: left;">
+            <h2>Uploaded Image</h2>
+            <div class="uploaded-image-container">
+                {% if uploaded_file_url %}
+                    <img id="uploadedImage" src="{{ uploaded_file_url }}" alt="Uploaded Image"/>
+                {% else %}
+                    <img id="uploadedImage" src="" alt="Upload an image to see it here" style="display:none;"/>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <h2>Processed Image</h2>
+            <div class="prediction-container">
+                {% if result_image_url %}
+                    <img id="predictedImage" src="{{ result_image_url }}" alt="Predicted Image"/>
+                {% else %}
+                    <img id="predictedImage" src="" alt="Predicted image will be displayed here" style="display:none;"/>
+                {% endif %}
+            </div>
+        </div>
+        <div class="wrapper">
+            <h2>About YOLOv8</h2>
+            <div class="info-container">
+                <p>
+                    YOLOv8 is the latest iteration of the YOLO (You Only Look Once) object detection algorithm, known for its speed and accuracy in detecting objects in images and videos. This version introduces improvements in both performance and usability, making it an excellent choice for real-time applications.
+                </p>
+                <!-- You can add more paragraphs or images related to YOLOv8 here -->
+            </div>
+        </div>
+
+        <!-- New Container for Gallery of Detected Images -->
+        <div class="wrapper">
+            <h2>Gallery</h2>
+            <div class="gallery-container">
+                <!-- Placeholder for gallery images; you can dynamically generate or update these with JavaScript or server-side logic -->
+                <img src="path_to_detected_image_1.jpg" alt="Detected Image 1" />
+                <img src="path_to_detected_image_2.jpg" alt="Detected Image 2" />
+                <!-- Add more images as needed -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-title">Team Members</div>
+                <p>Thulasiram Veeramangalam<br>Email: thulasi@example.com<br>Phone: +1-202-555-0171</p>
+                <p>Priyam<br>Email: priyam@example.com<br>Phone: +1-202-555-0152</p>
+                <p>Sagar<br>Email: sagar@example.com<br>Phone: +1-202-555-0133</p>
+            </div>
+            <div class="footer-section">
+                <div class="footer-title">Project Links</div>
+                <a href="https://github.com/veera776127/YOLO-missile-detection-capstone-project" class="footer-link">GitHub</a>
+                <a href="https://dagshub.com/veera776127/YOLO-missile-detection-capstone-project" class="footer-link">DagsHub</a>
+                <!-- Add other project-specific links here -->
+            </div>
+        </div>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -27,10 +27,3 @@ class ModelTrainConfig:
 class ModelValidationConfig:
     weights_path: str
 
-
-@dataclass
-class ModelPredictionConfig:
-  trained_weights_path: str
-  test_images_path: str
-  results_path: str
-  confidence_threshold: float

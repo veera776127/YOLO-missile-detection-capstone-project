@@ -1,9 +1,25 @@
-FROM python:3.8-slim-buster
+# Use the latest official Python runtime as a parent image
+FROM python:3.10
 
-RUN apt update -y && apt install awscli -y
+# Set the working directory in the container
 WORKDIR /app
 
+# Copy the current directory contents into the container at /app
 COPY . /app
-RUN pip install -r requirements.txt
 
-CMD ["python3", "missile_flask_app/app.py"]
+# Install libGL for OpenCV
+RUN apt-get update && apt-get install -y libgl1-mesa-glx
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+RUN pip install --no-cache-dir --upgrade ultralytics
+
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
+
+# Define environment variable
+ENV NAME World
+
+# Run app.py when the container launches
+CMD ["python", "app1.py"]

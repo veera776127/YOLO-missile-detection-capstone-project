@@ -1,0 +1,278 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #FEFEFE; /* An almost white, but with a touch of warmth */
+    color: #444; /* A slightly lighter shade of grey for text */
+    margin: 0;
+    padding: 20px;
+    line-height: 1.65; /* A bit more space for line height for readability */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions for color changes */
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+a {
+    color: #1E90FF; /* A bright, eye-catching blue for links */
+    text-decoration: none; /* Removes the underline from links */
+    transition: color 0.2s ease-in-out; /* Smooth transition for link colors */
+}
+
+a:hover,
+a:focus {
+    color: #FF4500; /* A vibrant orange for hover/focus state */
+    text-decoration: underline; /* Adds underline on hover/focus for better UX */
+}
+
+button,
+input[type='submit'],
+input[type='button'] {
+    font-family: 'Arial', sans-serif;
+    background-color: #1E90FF; /* Matching the link color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Changes cursor to indicate clickable */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+button:hover,
+input[type='submit']:hover,
+input[type='button']:hover {
+    background-color: #FF4500; /* Orange background on hover to match the link hover */
+}
+
+
+/* Global header styling */
+header {
+    width: 100%;
+    background: linear-gradient(135deg, #e4aef9, #7430e0); /* Gradient from purple to cyan-blue */
+    color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);s
+    margin-bottom: 40px; /* Space between header and content */
+}
+
+
+.header-container {
+    position: relative; /* Needed for absolute positioning of children */
+    /* Other styles... */
+}
+
+.website-logo {
+    position: absolute; /* Position the logo absolutely within the header */
+    top: 0px; /* Align the top edge of the logo with the header */
+    left: 0; /* Align the left edge of the logo with the header */
+    bottom: 50px;
+    width: 80px; /* Adjust the size as needed */
+    height: 80px; /* Maintain aspect ratio */
+    border-radius: 10px; /* Adjust as needed for rounded corners */
+    padding-bottom: 20%;
+}
+
+/* If you need the other header content to not overlap with the logo,
+   you should add left padding to the container: */
+.header-container {
+    padding-left: 60px; /* Adjust so it's larger than the logo width */
+    /* Other styles... */
+}
+
+
+/* If you need the header title and subtitle to be more centered, you can add the following: */
+.header-title, .header-subtitle {
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+.header-title {
+    font-size: 24px; /* Large enough to be readable and stand out */
+    font-weight: bold;
+}
+
+.header-subtitle {
+    font-size: 16px;
+    opacity: 0.9; /* Slightly subdued for aesthetic balance */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-subtitle {
+        margin-top: 10px; /* Extra spacing in smaller screens */
+    }
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    flex-wrap: wrap;
+    gap: 20px; /* Ensures even spacing around items */
+    padding: 20px;
+    background: linear-gradient(135deg, #e7e3fc, rgb(247, 253, 253), #d2bbf7);
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    padding: 20px;
+    background-color: #ffffff; /* Pure white background */
+    border-radius: 10px; /* More pronounced rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More pronounced shadow for depth */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.wrapper:hover {
+    transform: translateY(-5px); /* More pronounced hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.upload-container,.prediction-container, .uploaded-image-container {
+    width: 100%;
+    height: 300px; /* Fixed height to prevent resizing */
+    border: 2px dashed #ccc; /* Dashed border for a distinct look */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #fafafa; /* Very light grey for subtle contrast */
+    border-radius: 8px;
+}
+
+.upload-label {
+    font-size: 60px; /* Reduced size for better fit */
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    border-width: 0; /* Example: Setting border width to 0 */
+}
+.upload-label:hover {
+    color: #666;
+}
+
+.upload-btn {
+    position: relative; /* Establishes a positioning context for absolute positioned children */
+    width: 50%; /* Adjust the width as needed */
+    height: 60px; /* Adjust the height as needed */
+    padding-top: 20px; /* Top padding to the image */
+    padding-left: 100px;
+    display: flex;
+    align-items: center; /* This centers the button vertically */
+    justify-content: center; /* This centers the button horizontally */
+    overflow: hidden;
+    font-size: 18px; /* Clear and readable font size */
+    letter-spacing: 1.2px; /* Enhanced spacing for a premium look */
+    font-weight: 600; /* Bold but not too heavy */
+    padding: 10px 20px; /* Adequate padding for a comfortable click area */
+    background-image: linear-gradient(135deg, #6D5BBA 0%, #8D58BF 100%); /* A vibrant gradient for an attractive look */
+    color: #FFFFFF; /* White text for contrast */
+    border: none; /* No border for a modern look */
+    border-radius: 30px; /* Rounded corners for a friendly, approachable feel */
+    cursor: pointer; /* Cursor indicates the button is clickable */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; /* Smooth transitions for interaction */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    outline: none; /* Remove outline to keep the design clean, but ensure accessibility in other ways */
+}
+
+.upload-btn:hover {
+    transform: translateY(-3px); /* Slightly raise the button on hover for a dynamic effect */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover for a "lifting" illusion */
+    background-image: linear-gradient(135deg, #5A4B95 0%, #7B529A 100%); /* Slightly darker gradient on hover for interaction feedback */
+}
+
+.upload-btn:focus {
+    outline: 2px solid #5A4B95; /* Outline for accessibility, visible when focused (e.g., tabbing through elements) */
+    outline-offset: 2px; /* Space between the outline and the button edge */
+}
+
+
+
+.upload-container img, .prediction-container img, .uploaded-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Cover ensures aspect ratio is maintained while filling the height */
+}
+
+/* Upload message styling */
+#uploadMessage {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rebeccapurple;
+    font-size: 16px;
+    color: #d15d5d;
+}
+
+/* Additional hover effects for containers to increase interaction feedback */
+.upload-container:hover, .uploaded-image-container:hover, .prediction-container:hover {
+    border-color: #2706fc; /* Blue for a dynamic change */
+    box-shadow: 0 12px 24px rgba(4, 4, 4, 0.15);
+}
+footer {
+    width: 100%;
+    background-color: #2C3E50; /* Navy blue background for elegance */
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    margin-top: 40px; /* Ensures there's space between the content and the footer */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    margin: 10px 0;
+}
+
+.footer-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-link {
+    color: #BDC3C7; /* Light grey for links to stand out */
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+    color: #E0E0E0; /* Slightly lighter on hover for a subtle effect */
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin: 20px 0;
+    }
+}
+
