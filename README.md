@@ -88,11 +88,16 @@ docker images
 # Build the docker 
 docker build -t missile-app .
 
-#Run the docker 
+#Run the docker (before pushing to docker hub in local)
 #Docker maps this port to port 5000 on your host machine. This means you should be able to access your Flask application by visiting http://localhost:5000 in your web browser.
 docker run -p 5000:5000 missile-app
 
+#eg:(After pulling from docker hub)
+docker run -d -p 5000:5000 thulasiram6787/capstone-yolo_missile_detection_001:latest
+
+
 #Pushing the docker to docker hub 
+docker push thulasiram6787/capstone-yolo_missile_detection_001:latest
 
 #Login to docker hub (give username and password)
 docker login
@@ -104,7 +109,7 @@ docker tag missile-detection:latest yourusername/missile-detection:latest
 docker push yourusername/missile-detection:latest
 
 #Pull the docker image from the repository
-docker pull vishwas304/missile-detection:latest
+docker pull thulasiram6787/capstone-yolo_missile_detection_001:latest
 
 #Stop the running docker
 docker stop
