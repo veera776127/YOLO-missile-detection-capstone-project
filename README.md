@@ -76,34 +76,49 @@ Refer this ultralytics documentation for full details on validation
 ```bash
 https://docs.ultralytics.com/modes/predict/#probs
 ```
-# Docker script for dockerization
+# Docker commands for containerization
+
 ```bash
-# Use the latest official Python runtime as a parent image
-FROM python:3.10
+#Check for existing running containers use -a for all including stopped
+docker ps
 
-# Set the working directory in the container
-WORKDIR /app
+#Check for existing docker images
+docker images
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+# Build the docker 
+docker build -t missile-app .
 
-# Install libGL for OpenCV
-RUN apt-get update && apt-get install -y libgl1-mesa-glx
+#Run the docker 
+#Docker maps this port to port 5000 on your host machine. This means you should be able to access your Flask application by visiting http://localhost:5000 in your web browser.
+docker run -p 5000:5000 missile-app
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+#Pushing the docker to docker hub 
 
-RUN pip install --no-cache-dir --upgrade ultralytics
+#Login to docker hub (give username and password)
+docker login
 
-# Make port 5000 available to the world outside this container
-EXPOSE 5000
+#Create repository and tag it
+docker tag missile-detection:latest yourusername/missile-detection:latest
 
-# Define environment variable
-ENV NAME World
+#Push the docker image to the docker hub
+docker push yourusername/missile-detection:latest
 
-# Run app.py when the container launches
-CMD ["python", "app1.py"]
+#Pull the docker image from the repository
+docker pull vishwas304/missile-detection:latest
+
+#Stop the running docker
+docker stop
+
+#Remove the existing image 
+docker rmi missile-app:latest
+
+#Remove the Docker
+docker rm
+
 ```
+
+
+
 
 ## AWS credentials to access the datafile from the amazon s3 bucket 
 set these keys in python environment where your project is been developed so that you can access the s3 bucket without mentioning the credentials in code.
