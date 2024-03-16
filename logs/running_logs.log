@@ -3630,3 +3630,84 @@ Traceback (most recent call last):
   File "C:\Users\vishw\anaconda3\envs\capstone\Lib\site-packages\botocore\client.py", line 1009, in _make_api_call
     raise error_class(parsed_response, operation_name)
 botocore.exceptions.ClientError: An error occurred (403) when calling the HeadObject operation: Forbidden
+[2024-03-16 14:43:51,663: INFO: main: Starting pipeline execution...]
+[2024-03-16 14:43:51,663: INFO: main: Deleting __pycache__ and .pyc files...]
+[2024-03-16 14:43:51,716: INFO: main: Cleanup complete: __pycache__ directories and .pyc files removed.]
+[2024-03-16 14:43:51,717: INFO: main: 
+==================== Stage: Data Ingestion Stage Started ====================
+]
+[2024-03-16 14:43:51,719: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-16 14:43:51,720: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-16 14:43:51,720: INFO: common: created directory at: artifacts]
+[2024-03-16 14:43:51,720: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-03-16 14:43:51,735: INFO: credentials: Found credentials in environment variables.]
+[2024-03-16 14:43:51,911: INFO: data_ingestion: Downloading data from S3 bucket capstone-missile with key missile_data.zip into file artifacts/data_ingestion/missile_data.zip]
+[2024-03-16 14:43:52,831: INFO: data_ingestion: Downloaded data from S3 bucket capstone-missile into file artifacts/data_ingestion/missile_data.zip]
+[2024-03-16 14:43:52,931: INFO: data_ingestion: Extracted data to C:\Users\vishw\Documents\cap_project_tulasi\YOLO-missile-detection-capstone-project]
+[2024-03-16 14:43:52,932: INFO: main: 
+******************** Stage: Data Ingestion Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-03-16 14:43:52,932: INFO: main: 
+==================== Stage: Model Preparation Stage Started ====================
+]
+[2024-03-16 14:43:52,935: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-16 14:43:52,937: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-16 14:43:52,938: INFO: common: created directory at: artifacts]
+[2024-03-16 14:43:52,940: INFO: common: created directory at: artifacts]
+[2024-03-16 14:43:52,940: INFO: stage_02_prepare_model: Loading model...]
+[2024-03-16 14:43:53,082: INFO: stage_02_prepare_model: Model preparation and saving completed successfully.]
+[2024-03-16 14:43:53,082: INFO: stage_02_prepare_model: getting the yaml files]
+[2024-03-16 14:43:53,144: INFO: stage_02_prepare_model: saving data yaml files completed]
+[2024-03-16 14:43:53,148: INFO: main: 
+******************** Stage: Model Preparation Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-03-16 14:43:53,148: INFO: main: 
+==================== Stage: Model Training Stage Started ====================
+]
+[2024-03-16 14:43:53,151: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-16 14:43:53,153: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-16 14:43:53,153: INFO: common: created directory at: artifacts]
+[2024-03-16 14:43:53,155: INFO: stage_03_model_training: Training model...]
+[2024-03-16 14:43:53,155: INFO: model_training: Starting MLflow tracking...]
+[2024-03-16 14:43:53,165: INFO: model_training: MLflow tracking is enabled.]
+[2024-03-16 14:43:53,242: INFO: model_training: Model loaded successfully.]
+[2024-03-16 14:43:53,242: INFO: model_training: Training with missile_data.yaml for 5 epochs...]
+[2024-03-16 15:52:06,440: INFO: model_training: Model training completed.]
+[2024-03-16 15:52:06,441: INFO: model_training: Output directory verified: C:\Users\vishw\Documents\cap_project_tulasi\YOLO-missile-detection-capstone-project\missile_trained_weights]
+[2024-03-16 15:52:06,441: INFO: model_training: Looking in directory: C:\Users\vishw\Documents\cap_project_tulasi\YOLO-missile-detection-capstone-project\runs\detect]
+[2024-03-16 15:52:06,445: INFO: model_training: Found training runs: [WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train'), WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train2'), WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train3'), WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train4'), WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train5'), WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train6'), WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train7'), WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train8'), WindowsPath('C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/runs/detect/train9')]]
+[2024-03-16 15:52:06,446: INFO: model_training: Most recent training run: C:\Users\vishw\Documents\cap_project_tulasi\YOLO-missile-detection-capstone-project\runs\detect\train9\weights]
+[2024-03-16 15:52:06,447: WARNING: model_training: 'best.pt' already exists in the output directory and will be overwritten.]
+[2024-03-16 15:52:06,452: INFO: model_training: Best model weights saved to C:\Users\vishw\Documents\cap_project_tulasi\YOLO-missile-detection-capstone-project\missile_trained_weights\best.pt]
+[2024-03-16 15:52:06,458: INFO: model_training: Ultralytics settings have been reset to default values.]
+[2024-03-16 15:52:06,488: INFO: stage_03_model_training: Model training completed successfully.]
+[2024-03-16 15:52:06,489: INFO: main: 
+******************** Stage: Model Training Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-03-16 15:52:06,489: INFO: main: 
+==================== Stage: Model Validating Stage Started ====================
+]
+[2024-03-16 15:52:06,494: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-16 15:52:06,497: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-16 15:52:06,497: INFO: common: created directory at: artifacts]
+[2024-03-16 15:52:06,498: INFO: stage_04_model_validation: Validating the model...]
+[2024-03-16 15:52:06,498: INFO: model_validation: Loading the trained model from missile_trained_weights/best.pt...]
+[2024-03-16 15:52:06,585: INFO: model_validation: Validating the model...]
+[2024-03-16 15:52:23,806: INFO: model_validation: Validation completed.]
+[2024-03-16 15:52:23,806: INFO: model_validation: Metrics Information:]
+[2024-03-16 15:52:23,806: INFO: model_validation: mAP@50: 0.0005052490293438126]
+[2024-03-16 15:52:23,807: INFO: model_validation: mAP@75: 2.0336156392774856e-05]
+[2024-03-16 15:52:23,807: INFO: model_validation: mAPs: [ 0.00011466]]
+[2024-03-16 15:52:23,808: INFO: stage_04_model_validation: Model training completed successfully.]
+[2024-03-16 15:52:23,808: INFO: main: 
+******************** Stage: Model Validating Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-03-16 15:52:23,808: INFO: main: Pipeline execution completed successfully.]
