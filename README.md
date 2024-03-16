@@ -120,6 +120,13 @@ docker rmi missile-app:latest
 #Remove the Docker
 docker rm
 
+#Tranfering image from repository to repository
+docker tag existing-image:tag new-repository:new-tag
+(docker tag vishwas304/missile-detection:latest thulasiram6787/capstone-yolo_missile_detection_001:latest)
+docker login
+(docker push thulasiram6787/capstone-yolo_missile_detection_001:latest)
+
+
 ```
 
 
