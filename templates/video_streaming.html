@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Missile Detection - Video Streaming</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="{{ url_for('static', filename='images/missile-detection-logo.png') }}" alt="Missile Detection Logo" class="website-logo" />
+            <div class="header-title">MISSILE DETECTION VIDEO STREAMING</div>
+            <div class="header-subtitle">Stream and detect in real-time</div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="wrapper">
+            <h1>Live Video Stream</h1>
+            <div class="video-container">
+                <!-- Placeholder for video streaming element -->
+                <video id="liveVideoStream" controls autoplay style="width: 100%; height: auto;">
+                    <source src="path_to_live_stream" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <h2>About Real-Time Detection</h2>
+            <div class="info-container">
+                <p>
+                    Utilizing the power of YOLOv8 for real-time video surveillance and missile detection, our system analyzes video streams to instantly identify and locate missile threats. This allows for immediate action and intervention, showcasing the application's real-world utility and the technology's impact on enhancing security measures.
+                </p>
+                <!-- You can add more paragraphs or images related to real-time detection here -->
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <!-- Reuse the footer from the main page for consistency -->
+        <div class="footer-container">
+            <div class="footer-section">
+                <!-- Team Members and Contact Info -->
+            </div>
+            <div class="footer-section">
+                <!-- Project Links -->
+            </div>
+        </div>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

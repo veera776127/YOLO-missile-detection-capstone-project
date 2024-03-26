@@ -1,6 +1,6 @@
 prediction_params:
-  confidence_threshold: 0.01211
+  confidence_threshold: 0.3
 path:
-  trained_weights_path: C:/Users/vishw/Documents/cap_project_tulasi/YOLO-missile-detection-capstone-project/missile_trained_weights/best.pt
+  trained_weights_path: missile_trained_weights/best.pt
   test_images_path: test
   results_path: missile_flask_app/static/results

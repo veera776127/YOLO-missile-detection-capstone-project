@@ -8,6 +8,20 @@ body {
     transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions for color changes */
     overflow-x: hidden; /* Prevents horizontal scroll */
 }
+.navigation-link {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #7430e0; /* Purple to match the header gradient */
+    color: #ffffff; /* White text for contrast */
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.navigation-link:hover {
+    background-color: #5721a3; /* Darker purple on hover */
+}
 
 a {
     color: #1E90FF; /* A bright, eye-catching blue for links */
@@ -44,7 +58,7 @@ input[type='button']:hover {
 /* Global header styling */
 header {
     width: 100%;
-    background: linear-gradient(135deg, #e4aef9, #7430e0); /* Gradient from purple to cyan-blue */
+    background: linear-gradient(135deg, #aef9d3, #7430e0); /* Gradient from purple to cyan-blue */
     color: #ffffff;
     padding: 20px 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);s
