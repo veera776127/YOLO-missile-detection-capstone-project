@@ -5,7 +5,7 @@ FROM python:3.10
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-COPY . /app
+COPY . .
 
 # Install libGL for OpenCV
 RUN apt-get update && apt-get install -y libgl1-mesa-glx
@@ -15,7 +15,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-cache-dir --upgrade ultralytics
 
 # Set appropriate permissions for the directories
-RUN chmod -R 777 /app/uploads /app/results
+RUN chown -R 1000:1000 /app
+RUN chmod -R 755 /app
 
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
