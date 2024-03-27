@@ -12,8 +12,10 @@ RUN apt-get update && apt-get install -y libgl1-mesa-glx
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
-
 RUN pip install --no-cache-dir --upgrade ultralytics
+
+# Set appropriate permissions for the directories
+RUN chmod -R 777 /app/uploads /app/results
 
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
@@ -21,5 +23,5 @@ EXPOSE 5000
 # Define environment variable
 ENV NAME World
 
-# Run app.py when the container launches
+# Run app1.py when the container launches
 CMD ["python", "app1.py"]
