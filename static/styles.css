@@ -58,10 +58,11 @@ input[type='button']:hover {
 /* Global header styling */
 header {
     width: 100%;
-    background: linear-gradient(135deg, #aef9d3, #7430e0); /* Gradient from purple to cyan-blue */
+    height: 50px;
+    background: linear-gradient(135deg, #75c59d, #7430e0); /* Gradient from purple to cyan-blue */
     color: #ffffff;
     padding: 20px 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);s
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     margin-bottom: 40px; /* Space between header and content */
 }
 
@@ -85,15 +86,15 @@ header {
 /* If you need the other header content to not overlap with the logo,
    you should add left padding to the container: */
 .header-container {
-    padding-left: 60px; /* Adjust so it's larger than the logo width */
+    padding-left: 100px; /* Adjust so it's larger than the logo width */
     /* Other styles... */
 }
 
 
 /* If you need the header title and subtitle to be more centered, you can add the following: */
 .header-title, .header-subtitle {
-    flex-grow: 1;
-    text-align: center;
+    flex-grow: 10;
+    text-align: left;
 }
 
 
