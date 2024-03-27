@@ -8,8 +8,8 @@ import logging
 app = Flask(__name__)
 
 # Configuration
-UPLOAD_FOLDER = 'C:/Users/vishw/Documents/flask/uploads/'
-RESULTS_FOLDER = 'C:/Users/vishw/Documents/flask/results/'
+UPLOAD_FOLDER = 'uploads/'
+RESULTS_FOLDER = 'results/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['RESULTS_FOLDER'] = RESULTS_FOLDER
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif','mp4'}
