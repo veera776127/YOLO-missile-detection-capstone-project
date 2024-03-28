@@ -3976,3 +3976,141 @@ Traceback (most recent call last):
   File "C:\Users\vishw\anaconda3\envs\capstone\Lib\site-packages\botocore\client.py", line 1009, in _make_api_call
     raise error_class(parsed_response, operation_name)
 botocore.exceptions.ClientError: An error occurred (403) when calling the HeadObject operation: Forbidden
+[2024-03-27 18:57:21,615: INFO: main: Starting pipeline execution...]
+[2024-03-27 18:57:21,616: INFO: main: Deleting __pycache__ and .pyc files...]
+[2024-03-27 18:57:21,744: INFO: main: Cleanup complete: __pycache__ directories and .pyc files removed.]
+[2024-03-27 18:57:21,744: INFO: main: 
+==================== Stage: Data Ingestion Stage Started ====================
+]
+[2024-03-27 18:57:21,756: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-27 18:57:21,764: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-27 18:57:21,765: INFO: common: created directory at: artifacts]
+[2024-03-27 18:57:21,765: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-03-27 18:57:21,781: INFO: credentials: Found credentials in shared credentials file: ~/.aws/credentials]
+[2024-03-27 18:57:22,225: INFO: data_ingestion: Downloading data from S3 bucket capstone-missile with key missile_data.zip into file artifacts/data_ingestion/missile_data.zip]
+[2024-03-27 18:57:23,070: ERROR: data_ingestion: Failed to download file from S3: An error occurred (403) when calling the HeadObject operation: Forbidden]
+[2024-03-27 18:57:23,070: ERROR: main: An unexpected error occurred during pipeline execution:]
+Traceback (most recent call last):
+  File "C:\Users\vishw\Documents\cap_project_tulasi\YOLO-missile-detection-capstone-project\main.py", line 64, in <module>
+    run_data_ingestion_stage()
+  File "C:\Users\vishw\Documents\cap_project_tulasi\YOLO-missile-detection-capstone-project\main.py", line 32, in run_data_ingestion_stage
+    data_ingestion.main()
+  File "c:\users\vishw\documents\cap_project_tulasi\yolo-missile-detection-capstone-project\src\YOLOv8_objectdetection\pipeline\stage_01_data_ingestion.py", line 17, in main
+    data_ingestion.download_file_from_s3()
+  File "c:\users\vishw\documents\cap_project_tulasi\yolo-missile-detection-capstone-project\src\YOLOv8_objectdetection\components\data_ingestion.py", line 37, in download_file_from_s3
+    raise e
+  File "c:\users\vishw\documents\cap_project_tulasi\yolo-missile-detection-capstone-project\src\YOLOv8_objectdetection\components\data_ingestion.py", line 32, in download_file_from_s3
+    s3_client.download_file(bucket_name, object_key, local_data_file)
+  File "C:\Users\vishw\anaconda3\envs\capstone\Lib\site-packages\boto3\s3\inject.py", line 192, in download_file
+    return transfer.download_file(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vishw\anaconda3\envs\capstone\Lib\site-packages\boto3\s3\transfer.py", line 405, in download_file
+    future.result()
+  File "C:\Users\vishw\anaconda3\envs\capstone\Lib\site-packages\s3transfer\futures.py", line 103, in result
+    return self._coordinator.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vishw\anaconda3\envs\capstone\Lib\site-packages\s3transfer\futures.py", line 266, in result
+    raise self._exception
+  File "C:\Users\vishw\anaconda3\envs\capstone\Lib\site-packages\s3transfer\tasks.py", line 269, in _main
+    self._submit(transfer_future=transfer_future, **kwargs)
+  File "C:\Users\vishw\anaconda3\envs\capstone\Lib\site-packages\s3transfer\download.py", line 354, in _submit
+    response = client.head_object(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vishw\anaconda3\envs\capstone\Lib\site-packages\botocore\client.py", line 553, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vishw\anaconda3\envs\capstone\Lib\site-packages\botocore\client.py", line 1009, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (403) when calling the HeadObject operation: Forbidden
+[2024-03-27 18:59:26,582: INFO: main: Starting pipeline execution...]
+[2024-03-27 18:59:26,582: INFO: main: Deleting __pycache__ and .pyc files...]
+[2024-03-27 18:59:26,663: INFO: main: Cleanup complete: __pycache__ directories and .pyc files removed.]
+[2024-03-27 18:59:26,664: INFO: main: 
+==================== Stage: Data Ingestion Stage Started ====================
+]
+[2024-03-27 18:59:26,667: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-27 18:59:26,669: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-27 18:59:26,669: INFO: common: created directory at: artifacts]
+[2024-03-27 18:59:26,669: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-03-27 18:59:26,692: INFO: credentials: Found credentials in environment variables.]
+[2024-03-27 18:59:27,021: INFO: data_ingestion: Downloading data from S3 bucket capstone-missile with key missile_data.zip into file artifacts/data_ingestion/missile_data.zip]
+[2024-03-27 18:59:34,190: INFO: data_ingestion: Downloaded data from S3 bucket capstone-missile into file artifacts/data_ingestion/missile_data.zip]
+[2024-03-27 18:59:40,923: INFO: data_ingestion: Extracted data to C:\Users\vishw\Documents\cap_project_tulasi\YOLO-missile-detection-capstone-project]
+[2024-03-27 18:59:40,928: INFO: main: 
+******************** Stage: Data Ingestion Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-03-27 18:59:40,928: INFO: main: 
+==================== Stage: Model Preparation Stage Started ====================
+]
+[2024-03-27 18:59:40,931: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-27 18:59:40,932: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-27 18:59:40,932: INFO: common: created directory at: artifacts]
+[2024-03-27 18:59:40,933: INFO: common: created directory at: artifacts]
+[2024-03-27 18:59:40,934: INFO: stage_02_prepare_model: Loading model...]
+[2024-03-27 18:59:41,048: INFO: stage_02_prepare_model: Model preparation and saving completed successfully.]
+[2024-03-27 18:59:41,048: INFO: stage_02_prepare_model: getting the yaml files]
+[2024-03-27 18:59:41,098: INFO: stage_02_prepare_model: saving data yaml files completed]
+[2024-03-27 18:59:41,100: INFO: main: 
+******************** Stage: Model Preparation Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-03-27 18:59:41,100: INFO: main: 
+==================== Stage: Model Training Stage Started ====================
+]
+[2024-03-27 18:59:41,103: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-27 18:59:41,105: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-27 18:59:41,105: INFO: common: created directory at: artifacts]
+[2024-03-27 18:59:41,106: INFO: stage_03_model_training: Training model...]
+[2024-03-27 18:59:41,106: INFO: model_training: Starting MLflow tracking...]
+[2024-03-27 18:59:41,116: INFO: model_training: MLflow tracking is enabled.]
+[2024-03-27 18:59:41,176: INFO: model_training: Model loaded successfully.]
+[2024-03-27 18:59:41,176: INFO: model_training: Training with missile_data.yaml for 5 epochs...]
+[2024-03-27 19:00:47,282: INFO: main: Starting pipeline execution...]
+[2024-03-27 19:00:47,283: INFO: main: Deleting __pycache__ and .pyc files...]
+[2024-03-27 19:00:47,357: INFO: main: Cleanup complete: __pycache__ directories and .pyc files removed.]
+[2024-03-27 19:00:47,357: INFO: main: 
+==================== Stage: Data Ingestion Stage Started ====================
+]
+[2024-03-27 19:00:47,362: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-27 19:00:47,364: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-27 19:00:47,365: INFO: common: created directory at: artifacts]
+[2024-03-27 19:00:47,365: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-03-27 19:00:47,380: INFO: credentials: Found credentials in environment variables.]
+[2024-03-27 19:00:47,552: INFO: data_ingestion: Downloading data from S3 bucket capstone-missile with key missile_data.zip into file artifacts/data_ingestion/missile_data.zip]
+[2024-03-27 19:00:55,384: INFO: data_ingestion: Downloaded data from S3 bucket capstone-missile into file artifacts/data_ingestion/missile_data.zip]
+[2024-03-27 19:01:01,233: INFO: data_ingestion: Extracted data to C:\Users\vishw\Documents\cap_project_tulasi\YOLO-missile-detection-capstone-project]
+[2024-03-27 19:01:01,237: INFO: main: 
+******************** Stage: Data Ingestion Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-03-27 19:01:01,238: INFO: main: 
+==================== Stage: Model Preparation Stage Started ====================
+]
+[2024-03-27 19:01:01,241: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-27 19:01:01,243: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-27 19:01:01,243: INFO: common: created directory at: artifacts]
+[2024-03-27 19:01:01,244: INFO: common: created directory at: artifacts]
+[2024-03-27 19:01:01,245: INFO: stage_02_prepare_model: Loading model...]
+[2024-03-27 19:01:01,296: INFO: stage_02_prepare_model: Model preparation and saving completed successfully.]
+[2024-03-27 19:01:01,296: INFO: stage_02_prepare_model: getting the yaml files]
+[2024-03-27 19:01:01,336: INFO: stage_02_prepare_model: saving data yaml files completed]
+[2024-03-27 19:01:01,338: INFO: main: 
+******************** Stage: Model Preparation Stage Completed ********************
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+]
+[2024-03-27 19:01:01,338: INFO: main: 
+==================== Stage: Model Training Stage Started ====================
+]
+[2024-03-27 19:01:01,342: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-27 19:01:01,343: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-27 19:01:01,344: INFO: common: created directory at: artifacts]
+[2024-03-27 19:01:01,345: INFO: stage_03_model_training: Training model...]
+[2024-03-27 19:01:01,345: INFO: model_training: Starting MLflow tracking...]
+[2024-03-27 19:01:01,347: INFO: model_training: MLflow tracking is enabled.]
+[2024-03-27 19:01:01,395: INFO: model_training: Model loaded successfully.]
+[2024-03-27 19:01:01,396: INFO: model_training: Training with missile_data.yaml for 100 epochs...]

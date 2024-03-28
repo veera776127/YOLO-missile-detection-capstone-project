@@ -17,7 +17,7 @@ model_training:
   output_dir: missile_trained_weights
   runs_dir: runs/detect
   training_data_yaml: missile_data.yaml
-  epochs: 5
+  epochs: 100
 
 model_validation:
   weights_path: missile_trained_weights/best.pt
