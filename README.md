@@ -126,6 +126,11 @@ docker tag existing-image:tag new-repository:new-tag
 docker login
 (docker push thulasiram6787/capstone-yolo_missile_detection_001:latest)
 
+#Editing inside the docker shell
+docker exec -it <container_name_or_id> cmd
+docker exec -it <container_id_or_name> /bin/bash
+docker cp /path/to/local/file <container_id_or_name>:/path/inside/container
+
 
 ```
 ## AWS-CICD-Deployment-with-Github-Actions
@@ -162,12 +167,10 @@ docker login
 - Save the URI: 05418478717.dkr.ecr.us-east-1.amazonaws.com/missile
 4. Create EC2 machine (Ubuntu)
 5. Open EC2 and Install docker in EC2 Machine:
+  
 #optinal
-
 sudo apt-get update -y
-
 sudo apt-get upgrade
-
 #required
 
 curl -fsSL https://get.docker.com -o get-docker.sh
