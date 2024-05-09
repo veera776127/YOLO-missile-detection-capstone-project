@@ -7,8 +7,8 @@ Fine Tuning the YOLO v5 and YOLO v8 algorithm on custom missile dataset with the
 ![alt text](<study_images\overall_process.png>)
 
 TEAM MEMBERS
-PRIYAM SHARMA
-THULASIRAM VEERAMANGALAM
+PRIYAM SHARMA,
+THULASIRAM VEERAMANGALAM,
 SAGAR
 
 ## PROJECT WORKFLOWS
